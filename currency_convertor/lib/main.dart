@@ -47,6 +47,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   _performConversion(double value) {
+    if(quotes == null) initializeForex();
+    
     double exchangeValue = double.parse(quotes!.values.first.toString());
 
     setState(() {
