@@ -89,6 +89,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           icon: const Icon(Icons.close),
                           onPressed: () {
                             controller.clear();
+                            setState(() {
+                              errorText = '';
+                            });
                           },
                         ),
                       ),
