@@ -1,16 +1,14 @@
-# currency_convertor
+# Currency Convertor
 
-A new Flutter project.
+Assignment 1 - GAD Flutter Course
 
-## Getting Started
+Used forex package for converting EUR values into RON.
 
-This project is a starting point for a Flutter application.
+## Screenshots
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div style="display: flex; flex-direction: column">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/currency_convertor/flutter_01.png" width="300">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/currency_convertor/flutter_02.png" width="300">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/currency_convertor/flutter_03.png" width="300">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/currency_convertor/flutter_04.png" width="300">
+</div>
