@@ -11,10 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const appTitle = 'Guess My Number';
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Guess My Number',
-      home: const MyHomePage(title: 'Guess My Number'),
+      title: appTitle,
+      home: const MyHomePage(title: appTitle),
       theme: ThemeData(
         elevatedButtonTheme: ElevatedButtonThemeData(
             style: ButtonStyle(
