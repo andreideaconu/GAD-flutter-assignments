@@ -1,16 +1,26 @@
-# guess_my_number
+# Guess My Number
 
-Guess random number.
+Assignment 2 - GAD Flutter Course
 
-## Getting Started
+Game app which implies guessing a number between 1 and 100 with the help of hints shown on the screen.
 
-This project is a starting point for a Flutter application.
+## Screenshots
 
-A few resources to get you started if this is your first Flutter project:
+#### Main screen
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div style="display: flex; flex-direction: column">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%202/guess_my_number/assets/flutter_01.png" width="250">
+  
+#### Messages after clicking 'Guess' button
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%202/guess_my_number/assets/flutter_05.png" width="250">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%202/guess_my_number/assets/flutter_06.png" width="250">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%202/guess_my_number/assets/flutter_07.png" width="250">
+   
+#### Reset option (after clicking OK on the dialog)
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%202/guess_my_number/assets/flutter_08.png" width="250">
+  
+#### Validation errors  
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%202/guess_my_number/assets/flutter_02.png" width="250">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%202/guess_my_number/assets/flutter_03.png" width="250">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%202/guess_my_number/assets/flutter_04.png" width="250">
+</div>
