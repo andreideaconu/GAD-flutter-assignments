@@ -17,11 +17,10 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: 'Guess My Number'),
       theme: ThemeData(
         elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.black45),
-            foregroundColor: MaterialStateProperty.all(Colors.white),
-          )
-        ),
+            style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(Colors.black45),
+          foregroundColor: MaterialStateProperty.all(Colors.white),
+        )),
       ),
     );
   }
@@ -125,20 +124,21 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   _guessNumber(BuildContext context) {
-    setState(() {
-      String inputValue = controller.value.text;
-      if (_validateInput(inputValue)) {
-        int attempt = int.parse(inputValue);
+    String inputValue = controller.value.text;
+    if (_validateInput(inputValue)) {
+      int attempt = int.parse(inputValue);
+
+      setState(() {
         valueAttempt = attempt;
         result = _getResult(attempt, randomNumber);
+      });
 
-        if (result == ComparisonResult.equal) {
-          _showDialog(context, randomNumber);
-        }
-
-        _resetInput();
+      if (result == ComparisonResult.equal) {
+        _showDialog(context, randomNumber);
       }
-    });
+
+      _resetInput();
+    }
   }
 
   _generateNewRandomNumber() {
