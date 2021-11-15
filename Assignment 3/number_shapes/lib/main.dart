@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const appTitle = 'Number Shapes';
+    const String appTitle = 'Number Shapes';
 
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -30,6 +30,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class GeometricalNumber {
+  GeometricalNumber(this.initialNumber) {
+    isSquare = checkSquare(initialNumber);
+    isTriangular = checkTriangular(initialNumber);
+  }
+
   int initialNumber;
   bool? isSquare;
   bool? isTriangular;
@@ -41,34 +46,29 @@ class GeometricalNumber {
   bool checkTriangular(int number) {
     return checkSquare(int.parse((8 * number + 1).toString()));
   }
-
-  GeometricalNumber(this.initialNumber) {
-    isSquare = checkSquare(initialNumber);
-    isTriangular = checkTriangular(initialNumber);
-  }
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController controller = TextEditingController();
   String? errorText;
 
-  _resetInput() {
+  void _resetInput() {
     controller.clear();
   }
 
-  _setErrorText(String? text) {
+  void _setErrorText(String? text) {
     setState(() {
       errorText = text;
     });
   }
 
-  _validateInput(String inputValue) {
+  void _validateInput(String inputValue) {
     if (inputValue == '') {
       _setErrorText('Please enter a value');
       return;
     }
 
-    final value = int.tryParse(inputValue);
+    final int? value = int.tryParse(inputValue);
     if (value == null) {
       _setErrorText('Please enter a valid number');
       return;
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _setErrorText(null);
   }
 
-  _showDialog(
+  void _showDialog(
       BuildContext context, int number, String message, Function onClose) {
     showDialog<String>(
         context: context,
@@ -93,16 +93,16 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  _checkNumber(BuildContext context) {
-    String inputValue = controller.value.text;
+  void _checkNumber(BuildContext context) {
+    final String inputValue = controller.value.text;
     if (inputValue == '') {
       return;
     }
 
-    int number = int.parse(inputValue);
+    final int number = int.parse(inputValue);
     String message = '';
 
-    GeometricalNumber geometricalNumber = GeometricalNumber(number);
+    final GeometricalNumber geometricalNumber = GeometricalNumber(number);
 
     if (geometricalNumber.isSquare! && geometricalNumber.isTriangular!) {
       message = 'Number $number is both SQUARE and TRIANGULAR.';
@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final isButtonDisabled = errorText != null;
+    final bool isButtonDisabled = errorText != null;
 
     return Scaffold(
       appBar: AppBar(
@@ -158,8 +158,8 @@ class _MyHomePageState extends State<MyHomePage> {
             : () {
                 _checkNumber(context);
               },
-        child: const Icon(Icons.check),
         backgroundColor: isButtonDisabled ? Colors.grey[400] : null,
+        child: const Icon(Icons.check),
       ),
     );
   }
