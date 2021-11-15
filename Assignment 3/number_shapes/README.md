@@ -1,16 +1,23 @@
-# number_shapes
+# Number Shapes
 
-Check the shape of a number.
+Assignment 3 - GAD Flutter Course
 
-## Getting Started
+Check whether a number is square (<a href="https://en.wikipedia.org/wiki/Square_number">def</a>) or triangular (<a href="https://en.wikipedia.org/wiki/Triangular_number">def</a>).
 
-This project is a starting point for a Flutter application.
+## Screenshots
 
-A few resources to get you started if this is your first Flutter project:
+#### Main screen
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div style="display: flex; flex-direction: column">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%203/number_shapes/assets/flutter_01.png" width="250">
+  
+#### Checking the shape of the entered number
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%203/number_shapes/assets/flutter_05.png" width="250">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%203/number_shapes/assets/flutter_04.png" width="250">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%203/number_shapes/assets/flutter_06.png" width="250">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%203/number_shapes/assets/flutter_07.png" width="250">
+  
+#### Validation errors
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%203/number_shapes/assets/flutter_02.png" width="250">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/Assignment%203/number_shapes/assets/flutter_03.png" width="250">
+</div>
