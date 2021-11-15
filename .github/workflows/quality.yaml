@@ -1,6 +1,10 @@
 name: Check the quality of my code
 on:
   push:
+    paths:
+      - assignment_1
+      - assignment_2
+      - assignment_3
 
 jobs:
   quality_check:
@@ -9,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1
         with:
-          channel: 'stable'
+          channel: "stable"
       - name: Run format
         run: flutter format -l 120 --set-exit-if-changed .
       - name: Run analysis
