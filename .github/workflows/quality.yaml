@@ -1,10 +1,6 @@
 name: Check the quality of my code
 on:
   push:
-    paths:
-      - assignment_1
-      - assignment_2
-      - assignment_3
 
 jobs:
   quality_check:
