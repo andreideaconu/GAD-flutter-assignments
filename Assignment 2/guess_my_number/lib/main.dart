@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const appTitle = 'Guess My Number';
+    const String appTitle = 'Guess My Number';
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -65,16 +65,15 @@ class _MyHomePageState extends State<MyHomePage> {
       case ComparisonResult.equal:
         return 'You guessed right.';
       case ComparisonResult.greaterThan:
-      default:
         return 'Try lower';
     }
   }
 
-  _resetInput() {
+  void _resetInput() {
     controller.clear();
   }
 
-  _setErrorText(String? text) {
+  void _setErrorText(String? text) {
     setState(() {
       errorText = text;
     });
@@ -86,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
       return false;
     }
 
-    final value = int.tryParse(inputValue);
+    final int? value = int.tryParse(inputValue);
     if (value == null) {
       _setErrorText('Please enter a valid number');
       return false;
@@ -100,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return true;
   }
 
-  _showDialog(BuildContext context, int correctNumber) {
+  void _showDialog(BuildContext context, int correctNumber) {
     const String tryAgainText = 'Try again!';
     const String okText = 'OK';
 
@@ -125,10 +124,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ));
   }
 
-  _guessNumber(BuildContext context) {
-    String inputValue = controller.value.text;
+  void _guessNumber(BuildContext context) {
+    final String inputValue = controller.value.text;
     if (_validateInput(inputValue)) {
-      int attempt = int.parse(inputValue);
+      final int attempt = int.parse(inputValue);
 
       setState(() {
         valueAttempt = attempt;
@@ -143,13 +142,13 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  _generateNewRandomNumber() {
+  void _generateNewRandomNumber() {
     setState(() {
       randomNumber = Random().nextInt(99) + 1;
     });
   }
 
-  _resetGame() {
+  void _resetGame() {
     setState(() {
       valueAttempt = null;
       result = null;
@@ -161,10 +160,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final bool correctGuess = result == ComparisonResult.equal;
-    final ButtonStatus buttonStatus =
-        correctGuess ? ButtonStatus.reset : ButtonStatus.guess;
-    final String buttonText =
-        buttonStatus == ButtonStatus.reset ? 'Reset' : 'Guess';
+    final ButtonStatus buttonStatus = correctGuess ? ButtonStatus.reset : ButtonStatus.guess;
+    final String buttonText = buttonStatus == ButtonStatus.reset ? 'Reset' : 'Guess';
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -180,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               margin: const EdgeInsetsDirectional.only(top: 16.0, bottom: 8.0),
               child: const Text(
-                'I\'m thinking of a number between 1 and 100.',
+                "I'm thinking of a number between 1 and 100.",
                 style: TextStyle(fontSize: 19, fontWeight: FontWeight.w400),
                 textAlign: TextAlign.center,
               ),
@@ -188,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               margin: const EdgeInsetsDirectional.only(top: 8.0, bottom: 16.0),
               child: const Text(
-                'It\'s your turn to guess my number!',
+                "It's your turn to guess my number!",
                 style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                 textAlign: TextAlign.center,
               ),
@@ -197,9 +194,8 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 margin: const EdgeInsetsDirectional.only(top: 4.0, bottom: 8.0),
                 child: Text(
-                  'You tried $valueAttempt\n' + _getResultMessage(result!),
-                  style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.w400),
+                  'You tried $valueAttempt\n${_getResultMessage(result!)}',
+                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -211,10 +207,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
-                      children: [
+                      children: <Widget>[
                         Container(
-                          margin: const EdgeInsetsDirectional.only(
-                              top: 4.0, bottom: 4.0),
+                          margin: const EdgeInsetsDirectional.only(top: 4.0, bottom: 4.0),
                           child: Text(
                             'Try a number!',
                             style: Theme.of(context).textTheme.headline4,
@@ -222,8 +217,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         Container(
-                          margin:
-                              const EdgeInsetsDirectional.only(bottom: 16.0),
+                          margin: const EdgeInsetsDirectional.only(bottom: 16.0),
                           child: TextField(
                             controller: controller,
                             keyboardType: TextInputType.number,
@@ -244,8 +238,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               setState(() {
                                 if (buttonStatus == ButtonStatus.guess) {
                                   _guessNumber(context);
-                                  FocusScope.of(context)
-                                      .requestFocus(focusNode);
+                                  FocusScope.of(context).requestFocus(focusNode);
                                   return;
                                 }
                                 _resetGame();
