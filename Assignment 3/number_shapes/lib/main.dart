@@ -81,8 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _setErrorText(null);
   }
 
-  void _showDialog(
-      BuildContext context, int number, String message, Function onClose) {
+  void _showDialog(BuildContext context, int number, String message, Function onClose) {
     showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(

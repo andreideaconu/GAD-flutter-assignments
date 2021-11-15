@@ -38,8 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Map<String, num>? quotes;
 
   void initializeForex() async {
-    quotes = await Forex.fx(
-        quoteProvider: QuoteProvider.ecb, base: 'RON', quotes: <String>['EUR']);
+    quotes = await Forex.fx(quoteProvider: QuoteProvider.ecb, base: 'RON', quotes: <String>['EUR']);
   }
 
   double? _convertValue(String value) {
@@ -47,20 +46,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   _performConversion(double value) {
-    if(quotes == null) initializeForex();
-    
+    if (quotes == null) initializeForex();
+
     double exchangeValue = double.parse(quotes!.values.first.toString());
 
     setState(() {
-      convertedValue =
-          (valueToBeFormatted! * exchangeValue).toStringAsFixed(2) + ' RON';
+      convertedValue = (valueToBeFormatted! * exchangeValue).toStringAsFixed(2) + ' RON';
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    final bool shouldConvertButtonBeEnabled =
-        valueToBeFormatted != null && errorText == '';
+    final bool shouldConvertButtonBeEnabled = valueToBeFormatted != null && errorText == '';
     final bool showImage = MediaQuery.of(context).viewInsets.bottom == 0.0;
 
     return Scaffold(
@@ -76,12 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               if (showImage) const Image(image: AssetImage('assets/Money.jpg')),
               Container(
-                  margin: const EdgeInsetsDirectional.fromSTEB(
-                      16.0, 16.0, 16.0, 8.0),
+                  margin: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 8.0),
                   child: TextField(
                       controller: controller,
-                      keyboardType:
-                          const TextInputType.numberWithOptions(decimal: true),
+                      keyboardType: const TextInputType.numberWithOptions(decimal: true),
                       decoration: InputDecoration(
                         hintText: 'Enter the amount in EUR',
                         errorText: errorText,
