@@ -1,16 +1,11 @@
-# gad_redux
+# Movie Database
 
-A new Flutter project.
+Assignment 6 - GAD Flutter Course
 
-## Getting Started
+List of Movies using Redux.
 
-This project is a starting point for a Flutter application.
+## Screenshot
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div style="display: flex; flex-direction: column">
+<img src="https://github.com/andreideaconu/GAD-flutter-assignments/blob/master/assignment_6/gad_redux/flutter_01.png" width="250">
+</div>
